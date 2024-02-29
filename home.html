@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/" method="POST"> 
+        <!-- The form action was missing and the method attribute was missing. We need to set it to POST so that it gets picked up by the Flask Application. We need to set the action to '/' which is the endpoint that handles the form submission as well.-->
+        <input type="text" name="note" placeholder="Enter a note">
+        <button>Add Note</button>
+    </form>
+
+    <ul>
+    {% for note in notes%}
+        <li>{{ note }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
